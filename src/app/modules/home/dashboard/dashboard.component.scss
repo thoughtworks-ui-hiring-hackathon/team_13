@@ -23,3 +23,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+[appSliderItem] {
+  flex-shrink: 0;
+}

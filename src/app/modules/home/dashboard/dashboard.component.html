@@ -24,9 +24,11 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <ng-container *ngFor="let movie of latestMovieData">
-            <app-movie-card [movie]="movie"></app-movie-card>
-          </ng-container>
+          <app-slider>
+            <div appSliderItem *ngFor="let movie of latestMovieData">
+              <app-movie-card [movie]="movie"></app-movie-card>
+            </div>
+          </app-slider>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
