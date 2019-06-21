@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { Movie } from 'src/app/models/movie';
 
 @Component({
   selector: 'app-movie-card',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class MovieCardComponent implements OnInit {
   constructor(private router: Router) {}
   @Input()
-  movie: any;
+  movie: Movie;
 
   ngOnInit() {}
 
