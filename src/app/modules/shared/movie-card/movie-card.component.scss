@@ -9,20 +9,18 @@
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
   width: 170px;
   height: 320px;
 }
 
-
-.mat-card-image-custom{  
+.mat-card-image-custom {
   width: 320px;
   height: 170px;
   object-fit: cover;
- }
-.mat-card-show-more{
-  margin-top: 17px;  
+}
+.mat-card-show-more {
+  margin-top: 17px;
   float: right;
 }
 .mat-card-title {
@@ -35,8 +33,8 @@
 }
 .mat-card-genres {
   text-align: left;
-  clear: left
+  clear: left;
 }
-.mat-card-icon{
-  float: right
+.mat-card-icon {
+  float: right;
 }

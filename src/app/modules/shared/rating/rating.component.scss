@@ -7,7 +7,6 @@ fieldset {
   padding-left: 0px;
   padding-top: 10px;
 }
-
 .rating:not(:checked) > input {
   position: absolute;
   top: -9999px;
@@ -32,15 +31,4 @@ fieldset {
 
 .rating > input:checked ~ label {
   color: #f70;
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-  color: gold;
-}
-
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-  color: #ea0;
 }
