@@ -22,7 +22,9 @@ import { SliderComponent } from './slider/slider.component';
     MovieCardComponent,
     RatingComponent,
     SliderComponent,
-    SliderItemDirective
+    SliderItemDirective,
+    GenrePipe,
+    RatingPipe
   ]
 })
 export class SharedModule {}

@@ -8,13 +8,28 @@
       {{(movieDetails |async)?.overview }}
   </div>
   <div class="main-details-right">
-    <div>
-      <span>Genre</span>
-      
+    <div class="main-details-right-genre">
+      <span class="main-details-right-genre-key">Genre </span>
+      <span class="main-details-right-genre-data">
+        {{(movieDetails |async)?.genres[0].name  }}
+     </span>
     </div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="main-details-right-genre">
+        <span class="main-details-right-genre-key">Cast</span>
+        <span class="main-details-right-genre-data">
+            {{(movieDetails |async)?.credits.cast[0].name  }} {{(movieDetails |async)?.credits.cast[1].name  }}
+         </span>
+    </div>
+    <div class="main-details-right-genre">
+      <span class="main-details-right-genre-key">Director</span>
+      <span class="main-details-right-genre-data">
+          {{(movieDetails |async)?.credits.crew[0].name  }}
+       </span>
+    </div>
+    <div class="main-details-right-genre">
+        <span class="main-details-right-genre-key">Movie Rating</span>
+        <app-rating class="explore-rating" [rating]="(movieDetails |async)?.vote_average | rating" [itemId]="1"></app-rating> 
+    </div>
 
   </div>
 </div>
