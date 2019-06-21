@@ -1,14 +1,8 @@
 <mat-card class="example-card">
-  <!-- <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header> -->
   <img
     mat-card-image
     class="mat-card-image-custom"
     [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
-    alt="Photo of a Shiba Inu"
   />
   <mat-card-content>
     <div>
@@ -21,12 +15,16 @@
       </span>
     </div>
     <div>
-      <app-rating [rating]="movie.vote_average | rating" [itemId]="1"></app-rating>
-      <a href="javascript:void(0)" class="mat-card-show-more" (click)="cardClick(movie.id)">Show more</a>
+      <app-rating
+        [rating]="movie.vote_average | rating"
+        [itemId]="1"
+      ></app-rating>
+      <a
+        href="javascript:void(0)"
+        class="mat-card-show-more"
+        (click)="cardClick(movie.id)"
+        >Show more</a
+      >
     </div>
   </mat-card-content>
-  <!-- <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions> -->
 </mat-card>

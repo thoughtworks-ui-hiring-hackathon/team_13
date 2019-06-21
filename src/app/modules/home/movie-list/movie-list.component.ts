@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-  @Input() movies:Observable<any>;
+  @Input() movies: Observable<any>;
   constructor() {}
 
   ngOnInit() {}

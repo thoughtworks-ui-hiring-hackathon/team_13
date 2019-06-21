@@ -6,10 +6,13 @@ import {
   MatCardModule,
   MatGridListModule,
   MatIconModule,
-  MatMenuModule,
+  MatMenuModule
 } from '@angular/material';
 
 import { DashboardComponent } from './dashboard.component';
+import { SharedModule } from '../../shared/shared.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -26,7 +29,10 @@ describe('DashboardComponent', () => {
         MatGridListModule,
         MatIconModule,
         MatMenuModule,
-      ]
+        SharedModule,
+        HttpClientModule
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
