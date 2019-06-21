@@ -22,6 +22,8 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Movie App</span>
+      <button mat-button [routerLink]="['/home']">Home</button>
+      <button mat-button [routerLink]="['/explore']">Explore</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
