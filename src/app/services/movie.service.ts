@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { API_KEY, base_url} from '../../constant';
+import Constant from '../../constant';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,7 +10,25 @@ export class MovieService {
     constructor(private http: HttpClient) { }
 
     getLatestMovie(){
-        return this.http.get(`${base_url}/movie/now_playing?api_key=${API_KEY}&language=en-US&include_adult=false`);
+        return this.http.get(`${Constant.base_url}/movie/now_playing?api_key=${Constant.API_KEY}&language=en-US&include_adult=false`);
     }
+
+    getTrendingMovie(){
+        return this.http.get(`${Constant.base_url}/trending/movie/week?api_key=${Constant.API_KEY}`);
+    }
+
+    getMostWatchedMovie(){
+        return this.http.get(`${Constant.base_url}/movie/popular?api_key=${Constant.API_KEY}&language=en-US&page=1`);
+    }
+    
+    getMovieGenres(){
+        return this.http.get(`${Constant.base_url}/genre/movie/list?api_key=${Constant.API_KEY}&language=en-US`);    
+    }
+
+    getSimilarMovie(movieId: string){
+        return this.http.get(`${Constant.base_url}/movie/${movieId}/similar?api_key=${Constant.API_KEY}&language=en-US&page=1`);    
+    }
+
+
 
 }
