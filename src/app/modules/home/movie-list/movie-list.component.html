@@ -1,0 +1,5 @@
+<app-slider>
+  <div appSliderItem *ngFor="let movie of movies.results">
+    <app-movie-card [movie]="movie"></app-movie-card>
+  </div>
+</app-slider>
