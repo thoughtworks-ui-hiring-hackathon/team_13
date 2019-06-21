@@ -1,8 +1,11 @@
 .example-card {
-  max-width: 400px;
+  max-width: 500px;
   flex: 0 1 calc(24%);
   display: block;
   padding: 25px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 300px;
 }
 
 .example-header-image {
