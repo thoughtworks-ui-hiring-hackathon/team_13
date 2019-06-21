@@ -9,6 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { of } from 'rxjs';
+import { Movie } from 'src/app/models/movie';
 
 describe('MovieCardComponent', () => {
   let component: MovieCardComponent;
@@ -30,10 +31,11 @@ describe('MovieCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MovieCardComponent);
     component = fixture.componentInstance;
-    component.movie = of({
-      vote_average: 6.7,
-      genre_ids: [2, 3]
-    });
+    const movie: Movie = new Movie();
+    movie.vote_average = 6.7;
+    movie.genre_ids = [2, 3];
+    movie.adult = true;
+    component.movie = movie;
     fixture.detectChanges();
   });
 

@@ -21,4 +21,6 @@ export class Movie {
   vote_average: number;
   // tslint:disable-next-line:variable-name
   vote_count: number;
+
+  constructor() {}
 }
