@@ -4,9 +4,10 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MaterialModule } from 'src/app/material.module';
 import { RatingComponent } from './rating/rating.component';
 import { GenrePipe } from './pipes/genre.pipe';
+import { RatingPipe } from './pipes/rating.pipe';
 
 @NgModule({
-  declarations: [MovieCardComponent, RatingComponent, GenrePipe],
+  declarations: [MovieCardComponent, RatingComponent, GenrePipe, RatingPipe],
   imports: [CommonModule, MaterialModule],
   exports: [MovieCardComponent, RatingComponent]
 })
