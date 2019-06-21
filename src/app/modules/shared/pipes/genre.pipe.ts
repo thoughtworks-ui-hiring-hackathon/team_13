@@ -12,9 +12,9 @@ export class GenrePipe implements PipeTransform {
     let result = '';
     this.movieService.movieGenres.forEach((genre: Genre) => {
       if (value.indexOf(genre.id) > -1) {
-        result += genre.name;
+        result += genre.name + ', ';
       }
     });
-    return result;
+    return result.substring(0, result.lastIndexOf(','));
   }
 }

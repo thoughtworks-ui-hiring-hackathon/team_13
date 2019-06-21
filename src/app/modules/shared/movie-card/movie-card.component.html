@@ -5,7 +5,8 @@
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
   </mat-card-header> -->
   <img
-    mat-card-image class="mat-card-image-custom"
+    mat-card-image
+    class="mat-card-image-custom"
     [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
     alt="Photo of a Shiba Inu"
   />
@@ -18,7 +19,10 @@
       {{ movie.genre_ids | genre }}
     </div>
     <div>
-      <app-rating [rating]="3" [itemId]="1"></app-rating>
+      <app-rating
+        [rating]="movie.vote_average | rating"
+        [itemId]="1"
+      ></app-rating>
       <a class="mat-card-show-more">Show more</a>
     </div>
   </mat-card-content>
