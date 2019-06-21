@@ -56,10 +56,5 @@ export class DashboardComponent implements OnInit {
     this.trendingMovieData = this.movieService.getTrendingMovie();
     this.mostWatchedMovieData = this.movieService.getMostWatchedMovie();
   }
-  cardClick(data: any) {
-    console.log(data);
-    this.router.navigate(['/explore'], {
-      queryParams: { id: data.id }
-    })
-  }
+ 
 }

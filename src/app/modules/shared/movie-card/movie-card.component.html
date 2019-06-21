@@ -18,7 +18,7 @@
     </div>
     <div>
       <app-rating [rating]="movie.vote_average | rating" [itemId]="1"></app-rating>
-      <a href="javascript:void(0)" class="mat-card-show-more">Show more</a>
+      <a href="javascript:void(0)" class="mat-card-show-more" (click)="cardClick(movie.id)">Show more</a>
     </div>
   </mat-card-content>
   <!-- <mat-card-actions>
