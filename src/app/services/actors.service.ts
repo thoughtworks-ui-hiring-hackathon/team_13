@@ -15,4 +15,11 @@ export class MovieService {
       }&language=en-US`
     );
   }
+  getActorsFilmographyDetails(actorId: string) {
+    return this.http.get(
+      `${Constant.base_url}/person/${actorId}/movie_credits?api_key=${
+        Constant.API_KEY
+      }&language=en-US`
+    );
+  }
 }
