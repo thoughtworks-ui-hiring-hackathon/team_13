@@ -5,21 +5,21 @@
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
   </mat-card-header> -->
   <img
-    mat-card-image
+    mat-card-image class="mat-card-image-custom"
     [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
     alt="Photo of a Shiba Inu"
   />
   <mat-card-content>
-    <div>
+    <div class="mat-card-title">
       {{ movie.title }}
       <mat-icon>favorite</mat-icon>
     </div>
-    <div>
+    <div class="mat-card-genres">
       Action adventure
     </div>
     <div>
       <app-rating [rating]="3" [itemId]="1"></app-rating>
-      <a>Show more</a>
+      <a class="mat-card-show-more">Show more</a>
     </div>
   </mat-card-content>
   <!-- <mat-card-actions>
