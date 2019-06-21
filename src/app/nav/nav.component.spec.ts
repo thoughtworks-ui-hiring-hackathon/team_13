@@ -6,10 +6,12 @@ import {
   MatIconModule,
   MatListModule,
   MatSidenavModule,
-  MatToolbarModule,
+  MatToolbarModule
 } from '@angular/material';
 
 import { NavComponent } from './nav.component';
+import { RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -26,6 +28,7 @@ describe('NavComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        RouterTestingModule
       ]
     }).compileComponents();
   }));
