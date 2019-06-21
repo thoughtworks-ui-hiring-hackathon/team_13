@@ -4,25 +4,20 @@
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
   </mat-card-header> -->
-  <img
-    mat-card-image
-    class="mat-card-image-custom"
-    [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
-    alt="Photo of a Shiba Inu"
-  />
+  <img mat-card-image class="mat-card-image-custom" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+    alt="Photo of a Shiba Inu" />
   <mat-card-content>
-    <div >
-    <span class="mat-card-title">  {{ movie.title }}</span>
+    <div>
+      <span class="mat-card-title"> {{ movie.title }}</span>
       <mat-icon class="mat-card-icon">favorite</mat-icon>
     </div>
     <div class="mat-card-genres">
-      {{ movie.genre_ids | genre }}
+      <span>
+        {{ movie.genre_ids | genre }}
+      </span>
     </div>
     <div>
-      <app-rating
-        [rating]="movie.vote_average | rating"
-        [itemId]="1"
-      ></app-rating>
+      <app-rating [rating]="movie.vote_average | rating" [itemId]="1"></app-rating>
       <a class="mat-card-show-more">Show more</a>
     </div>
   </mat-card-content>

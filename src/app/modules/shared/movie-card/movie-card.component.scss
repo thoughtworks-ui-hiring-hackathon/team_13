@@ -16,8 +16,10 @@
 }
 
 
-.mat-card-image-custom{
-  width: 120px ;
+.mat-card-image-custom{  
+  width: 320px;
+  height: 170px;
+  object-fit: cover;
  }
 .mat-card-show-more{
   margin-top: 17px;
@@ -26,6 +28,10 @@
 .mat-card-title{
   font-size: 20px;
   text-align: left;
+  display: block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  float: left;
 }
 .mat-card-genres{
   text-align: left;
