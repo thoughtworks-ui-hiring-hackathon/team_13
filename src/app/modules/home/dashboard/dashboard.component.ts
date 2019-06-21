@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  latestMovieData: any;
+
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -18,6 +21,13 @@ export class DashboardComponent {
       return [{ title: 'Card 1', cols: 2, rows: 1 }];
     })
   );
+   
+  constructor(private breakpointObserver: BreakpointObserver, private movieService: MovieService) {}
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit(){
+    this.movieService.getLatestMovie().subscribe((data)=>{
+      this.latestMovieData.result = data;
+      console.log(data);
+    });
+  }
 }
