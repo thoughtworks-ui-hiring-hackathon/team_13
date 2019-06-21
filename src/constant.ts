@@ -1,4 +1,4 @@
 export default class Constant {
   public static API_KEY = '';
-  public static base_url = 'https://api.themoviedb.org/3';
+  public static BASE_URL = 'https://api.themoviedb.org/3';
 }

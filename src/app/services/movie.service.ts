@@ -21,7 +21,7 @@ export class MovieService {
 
   getLatestMovie() {
     return this.http.get(
-      `${Constant.base_url}/movie/now_playing?api_key=${
+      `${Constant.BASE_URL}/movie/now_playing?api_key=${
         Constant.API_KEY
       }&language=en-US&include_adult=false`
     );
@@ -29,13 +29,13 @@ export class MovieService {
 
   getTrendingMovie() {
     return this.http.get(
-      `${Constant.base_url}/trending/movie/week?api_key=${Constant.API_KEY}`
+      `${Constant.BASE_URL}/trending/movie/week?api_key=${Constant.API_KEY}`
     );
   }
 
   getMostWatchedMovie() {
     return this.http.get(
-      `${Constant.base_url}/movie/popular?api_key=${
+      `${Constant.BASE_URL}/movie/popular?api_key=${
         Constant.API_KEY
       }&language=en-US&page=1`
     );
@@ -43,14 +43,14 @@ export class MovieService {
 
   getMovieGenres() {
     return this.http.get(
-      `${Constant.base_url}/genre/movie/list?api_key=${
+      `${Constant.BASE_URL}/genre/movie/list?api_key=${
         Constant.API_KEY
       }&language=en-US`
     );
   }
   getMovieDetails(movieId: string) {
     return this.http.get(
-      `${Constant.base_url}/movie/${movieId}?api_key=${
+      `${Constant.BASE_URL}/movie/${movieId}?api_key=${
         Constant.API_KEY
       }&language=en-US&append_to_response=credits`
     );
@@ -58,7 +58,7 @@ export class MovieService {
 
   getSimilarMovie(movieId: string) {
     return this.http.get(
-      `${Constant.base_url}/movie/${movieId}/similar?api_key=${
+      `${Constant.BASE_URL}/movie/${movieId}/similar?api_key=${
         Constant.API_KEY
       }&language=en-US&page=1`
     );
@@ -66,7 +66,7 @@ export class MovieService {
 
   getMovieSearch(searchQuery: string) {
     return this.http.get(
-      `${Constant.base_url}/search/multi?api_key=${
+      `${Constant.BASE_URL}/search/multi?api_key=${
         Constant.API_KEY
       }&language=en-US&query=${searchQuery}&page=1&include_adult=false`
     );
