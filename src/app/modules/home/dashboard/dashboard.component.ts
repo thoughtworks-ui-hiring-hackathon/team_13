@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { MovieService } from 'src/app/services/movie.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { Movie } from 'src/app/models/movie';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +11,9 @@ import { Observable } from 'rxjs/internal/Observable';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  latestMovieData: Observable<any>;
-  trendingMovieData: Observable<any>;
-  mostWatchedMovieData: Observable<any>;
+  latestMovieData: Observable<Movie[]>;
+  trendingMovieData: Observable<Movie[]>;
+  mostWatchedMovieData: Observable<Movie[]>;
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -56,7 +57,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.latestMovieData = this.movieService.getLatestMovie();
-
     this.trendingMovieData = this.movieService.getTrendingMovie();
     this.mostWatchedMovieData = this.movieService.getMostWatchedMovie();
   }
