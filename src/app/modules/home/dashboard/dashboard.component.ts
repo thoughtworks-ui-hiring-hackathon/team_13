@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { MovieService } from 'src/app/services/movie.service';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
@@ -14,29 +13,11 @@ export class DashboardComponent implements OnInit {
   latestMovieData: Observable<any>;
   trendingMovieData: Observable<any>;
   mostWatchedMovieData: Observable<any>;
+
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
-      const views = [
-        {
-          title: 'Latest',
-          cols: 1,
-          rows: 1,
-          movieList: this.latestMovieData
-        },
-        {
-          title: 'Trending',
-          cols: 1,
-          rows: 1,
-          movieList: this.trendingMovieData
-        },
-        {
-          title: 'Most Watched',
-          cols: 1,
-          rows: 1,
-          movieList: this.mostWatchedMovieData
-        }
-      ];
+      const views = this.getViews();
       if (matches) {
         return views;
       }
@@ -47,8 +28,31 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private movieService: MovieService, private router: Router
-  ) { }
+    private movieService: MovieService
+  ) {}
+
+  private getViews() {
+    return [
+      {
+        title: 'Latest',
+        cols: 1,
+        rows: 1,
+        movieList: this.latestMovieData
+      },
+      {
+        title: 'Trending',
+        cols: 1,
+        rows: 1,
+        movieList: this.trendingMovieData
+      },
+      {
+        title: 'Most Watched',
+        cols: 1,
+        rows: 1,
+        movieList: this.mostWatchedMovieData
+      }
+    ];
+  }
 
   ngOnInit() {
     this.latestMovieData = this.movieService.getLatestMovie();
@@ -56,5 +60,4 @@ export class DashboardComponent implements OnInit {
     this.trendingMovieData = this.movieService.getTrendingMovie();
     this.mostWatchedMovieData = this.movieService.getMostWatchedMovie();
   }
- 
 }

@@ -8,19 +8,15 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.Native
 })
 export class MovieCardComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
   @Input()
   movie: any;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   cardClick(data: any) {
-    console.log(data);
     this.router.navigate(['/explore'], {
       queryParams: { id: data }
-    })
+    });
   }
-
 }
