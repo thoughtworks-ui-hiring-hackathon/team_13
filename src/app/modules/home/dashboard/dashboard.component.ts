@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { MovieService } from 'src/app/services/movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,13 +25,19 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private movieService: MovieService
-  ) {}
+    private movieService: MovieService, private router: Router
+  ) { }
 
   ngOnInit() {
     this.movieService.getLatestMovie().subscribe((data: any) => {
       this.latestMovieData = data.results;
       console.log(this.latestMovieData);
     });
+  }
+  cardClick(data: any) {
+    console.log(data);
+    this.router.navigate(['/explore'], {
+      queryParams: { id: data.id }
+    })
   }
 }

@@ -1,3 +1,15 @@
-<p>
-  explore works!
-</p>
+<div class="main-imgae">
+    <img [src]="'https://image.tmdb.org/t/p/w500/'+ (movieDetails |async)?.backdrop_path " />
+   
+</div>
+<div class="main-details">
+  <div class="main-details-left">
+      {{(movieDetails |async)?.overview }}
+  </div>
+  <div class="main-details-right">
+   2
+  </div>
+</div>
+<div class="main-similar">
+
+</div>

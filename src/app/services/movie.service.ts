@@ -48,6 +48,13 @@ export class MovieService {
       }&language=en-US`
     );
   }
+  getMovieDetails(movieId: string) {
+    return this.http.get(
+      `${Constant.base_url}/movie/${movieId}?api_key=${
+        Constant.API_KEY
+      }&language=en-US&append_to_response=credits`
+    );
+  }
 
   getSimilarMovie(movieId: string) {
     return this.http.get(

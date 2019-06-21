@@ -6,7 +6,7 @@
       [colspan]="card.cols"
       [rowspan]="card.rows"
     >
-      <mat-card class="dashboard-card">
+      <mat-card class="dashboard-card" >
         <mat-card-header>
           <mat-card-title>
             Latest
@@ -26,7 +26,7 @@
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <app-slider>
-            <div appSliderItem *ngFor="let movie of latestMovieData">
+            <div appSliderItem *ngFor="let movie of latestMovieData" (click)="cardClick(movie)">
               <app-movie-card [movie]="movie"></app-movie-card>
             </div>
           </app-slider>
