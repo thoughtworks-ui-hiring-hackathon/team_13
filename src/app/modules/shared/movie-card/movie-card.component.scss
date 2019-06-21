@@ -22,8 +22,8 @@
   object-fit: cover;
  }
 .mat-card-show-more{
-  margin-top: 17px;
-  float: left;
+  margin-top: 17px;  
+  float: right;
 }
 .mat-card-title {
   font-size: 20px;
@@ -35,4 +35,8 @@
 }
 .mat-card-genres {
   text-align: left;
+  clear: left
+}
+.mat-card-icon{
+  float: right
 }

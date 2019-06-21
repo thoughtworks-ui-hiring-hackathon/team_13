@@ -3,8 +3,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss'],
-  encapsulation: ViewEncapsulation.Native
+  styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
 
