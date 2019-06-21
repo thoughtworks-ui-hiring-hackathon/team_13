@@ -25,20 +25,4 @@ export class SliderComponent {
   get currentItem(): ElementRef<HTMLDivElement> {
     return this.items.find((item, index) => index === this.slidesIndex);
   }
-
-  onClickLeft() {
-    this.slidesContainer.nativeElement.scrollLeft -= this.currentItem.nativeElement.offsetWidth;
-
-    if (this.slidesIndex > 0) {
-      this.slidesIndex--;
-    }
-  }
-
-  onClickRight() {
-    this.slidesContainer.nativeElement.scrollLeft += this.currentItem.nativeElement.offsetWidth;
-
-    if (this.slidesIndex < this.items.length - 1) {
-      this.slidesIndex++;
-    }
-  }
 }
