@@ -1,5 +1,8 @@
 .example-card {
   max-width: 400px;
+  flex: 0 1 calc(24%);
+  display: block;
+  padding: 25px;
 }
 
 .example-header-image {
@@ -12,4 +15,9 @@
 mat-card {
   height: 150px;
   width: 200px;
+}
+
+mat-card-image {
+  width: 200px;
+  height: 320px;
 }

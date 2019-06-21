@@ -21,13 +21,16 @@ export class DashboardComponent implements OnInit {
       return [{ title: 'Card 1', cols: 2, rows: 1 }];
     })
   );
-   
-  constructor(private breakpointObserver: BreakpointObserver, private movieService: MovieService) {}
 
-  ngOnInit(){
-    this.movieService.getLatestMovie().subscribe((data)=>{
-      this.latestMovieData.result = data;
-      console.log(data);
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private movieService: MovieService
+  ) {}
+
+  ngOnInit() {
+    this.movieService.getLatestMovie().subscribe((data: any) => {
+      this.latestMovieData = data.results;
+      console.log(this.latestMovieData);
     });
   }
 }
