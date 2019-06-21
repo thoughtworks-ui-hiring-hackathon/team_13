@@ -10,9 +10,9 @@
     alt="Photo of a Shiba Inu"
   />
   <mat-card-content>
-    <div class="mat-card-title">
-      {{ movie.title }}
-      <mat-icon>favorite</mat-icon>
+    <div >
+    <span class="mat-card-title">  {{ movie.title }}</span>
+      <mat-icon class="mat-card-icon">favorite</mat-icon>
     </div>
     <div class="mat-card-genres">
       {{ movie.genre_ids | genre }}

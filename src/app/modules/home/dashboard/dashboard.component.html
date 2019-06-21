@@ -1,6 +1,6 @@
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <mat-grid-list cols="2" rowHeight="460px">
     <mat-grid-tile
       *ngFor="let card of cards | async"
       [colspan]="card.cols"
@@ -9,6 +9,7 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
+              Latest
             <!-- <button
               mat-icon-button
               class="more-button"
@@ -24,6 +25,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
+          
           <ng-container *ngFor="let movie of latestMovieData">
             <app-movie-card [movie]="movie"></app-movie-card>
           </ng-container>
